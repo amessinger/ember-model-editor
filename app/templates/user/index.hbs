@@ -1,4 +1,7 @@
 {{outlet}}
+
+{{link-to 'Index' 'index'}}
+
 <ul>
   {{#each model as |user|}}
     <li>{{link-to user.username 'user.detail' user.id}}</li>

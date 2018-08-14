@@ -1,24 +1,34 @@
 export function initialize(appInstance) {
+  generateGroups(appInstance);
+}
+
+function generateGroups(appInstance) {
   let store = appInstance.lookup('service:store');
-  let serializer = store.serializerFor('user');
-  let modelClass = store.modelFor('user');
-  let usersPayload = [
+  let serializer = store.serializerFor('group');
+  let modelClass = store.modelFor('group');
+  let groupsPayload = [
     {
       id: 1,
-      name: 'Bruce Wayne',
-      username: 'Batman',
-      email: 'batman@gotham.com'
-    },
-    {
-      id: 2,
-      name: 'Clark Kent',
-      username: 'Superman',
-      email: 'superman@metropolis.com'
+      name: 'Avengers',
+      members: [
+        {
+          id: 3,
+          name: 'Bruce Wayne',
+          username: 'Batman',
+          email: 'batman@gotham.com'
+        },
+        {
+          id: 4,
+          name: 'Clark Kent',
+          username: 'Superman',
+          email: 'superman@metropolis.com'
+        }
+      ]
     }
   ];
-  usersPayload.forEach((userPayload)=> {
-    let user = serializer.normalize(modelClass, userPayload);
-    store.push(user);
+  groupsPayload.forEach((groupPayload)=> {
+    let payload = serializer.normalize(modelClass, groupPayload);
+    store.push(payload);
   });
 }
 

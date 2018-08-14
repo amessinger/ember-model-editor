@@ -1,0 +1,9 @@
+{{outlet}}
+
+{{link-to 'Index' 'index'}}
+
+<ul>
+  {{#each model as |group|}}
+    <li>{{link-to group.name 'group.detail' group.id}}</li>
+  {{/each}}
+</ul>

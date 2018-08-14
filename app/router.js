@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('user', function() {
     this.route('detail', { path: '/:id' });
   });
+  this.route('group', function() {
+    this.route('detail', { path: '/:id' });
+  });
 });
 
 export default Router;

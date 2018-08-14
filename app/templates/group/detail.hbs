@@ -1,0 +1,11 @@
+{{outlet}}
+
+{{link-to 'Group listing' 'group.index'}}
+
+<div>{{model.name}}</div>
+
+{{#each model.members as |user|}}
+  <li>{{link-to user.username 'user.detail' user.id}}</li>
+{{/each}}
+
+{{model-editor model=model}}
