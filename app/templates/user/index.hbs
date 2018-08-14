@@ -1,0 +1,6 @@
+{{outlet}}
+<ul>
+  {{#each model as |user|}}
+    <li>{{link-to user.username 'user.detail' user.id}}</li>
+  {{/each}}
+</ul>
