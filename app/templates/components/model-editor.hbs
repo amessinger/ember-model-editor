@@ -1,5 +1,11 @@
-Model Editor
+<h4>Model Editor</h4>
 <form {{action 'doUpdate' on='submit'}}>
+  <label for="include-id">
+    {{input id='include-id' type='checkbox' checked=includeId}} Include ID
+  </label>
   {{textarea value=value rows="8" cols="80"}}
-  <button type="submit" name="submit-button">Update</button>
+  <p>
+    <button type="submit" name="submit-button">Update</button>
+  </p>
+
 </form>

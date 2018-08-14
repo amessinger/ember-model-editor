@@ -1,9 +1,14 @@
 {{outlet}}
 
-{{link-to 'User listing' 'user.index'}}
+<h1>User "{{model.username}}" detail</h1>
 
-<div>{{model.username}}</div>
-<div>{{model.name}}</div>
-<div>{{model.email}}</div>
+<dl>
+  <dt>Username</dt>
+  <dd>{{model.username}}</dd>
+  <dt>Name</dt>
+  <dd>{{model.name}}</dd>
+  <dt>Email</dt>
+  <dd>{{model.email}}</dd>
+</dl>
 
 {{model-editor model=model}}

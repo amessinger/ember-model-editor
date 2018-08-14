@@ -1,8 +1,11 @@
 {{outlet}}
 
-{{link-to 'Group listing' 'group.index'}}
+<h1>Group "{{model.name}}" detail</h1>
 
-<div>{{model.name}}</div>
+<dl>
+  <dt>Name</dt>
+  <dd>{{model.name}}</dd>
+</dl>
 
 {{#each model.members as |user|}}
   <li>{{link-to user.username 'user.detail' user.id}}</li>
