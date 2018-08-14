@@ -1,7 +1,7 @@
-import User from '../models/user';
 export function initialize(appInstance) {
   let store = appInstance.lookup('service:store');
   let serializer = store.serializerFor('user');
+  let modelClass = store.modelFor('user');
   let usersPayload = [
     {
       id: 1,
@@ -17,9 +17,7 @@ export function initialize(appInstance) {
     }
   ];
   usersPayload.forEach((userPayload)=> {
-    // store.createRecord('user', userPayload);
-    let user = serializer.normalize(User, userPayload);
-    user.data.type = 'user'; // FIXME: this info should be in the modelClass "User"
+    let user = serializer.normalize(modelClass, userPayload);
     store.push(user);
   });
 }
